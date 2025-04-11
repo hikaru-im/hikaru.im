@@ -19,7 +19,8 @@
 2. 进行本地开发，Clone 新的仓库，执行 `pnpm install` 和 `pnpm add sharp` 以安装依赖
 3. 通过配置文件 `src/config.ts` 自定义博客
 4. 执行 `pnpm new-post <filename>` 创建新文章，并在 `src/content/posts/` 目录中编辑
-5. 参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Vercel, Netlify, GitHub Pages 等；部署前需编辑 `astro.config.mjs` 中的站点设置
+5. 参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Vercel, Netlify, GitHub Pages 等；部署前需编辑
+   `astro.config.mjs` 中的站点设置
 
 ## ⚙️ 文章 Front matter
 
@@ -29,7 +30,7 @@ title: My First Blog Post
 published: 2023-09-09
 description: This is the first post of my new Astro blog.
 image: ./cover.jpg
-tags: [Foo, Bar]
+tags: [ Foo, Bar ]
 category: Front-end
 draft: false
 # lang: jp
