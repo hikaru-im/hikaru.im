@@ -69,7 +69,7 @@ onMount(async () => {
 			// 如果iframe还没有加载，稍后再尝试，使用指数退避策略
 			setTimeout(
 				() => findGiscusFrame(retries + 1, maxRetries),
-				100 * Math.pow(1.5, retries),
+                100 * (1.5 ** retries),
 			);
 		}
 	};
