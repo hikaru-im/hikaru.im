@@ -1,10 +1,11 @@
 import type {
-	LicenseConfig,
-	NavBarConfig,
-	ProfileConfig,
-	SiteConfig,
-} from "./types/config";
-import { LinkPreset } from "./types/config";
+  CommentConfig,
+  LicenseConfig,
+  NavBarConfig,
+  ProfileConfig,
+  SiteConfig,
+} from './types/config'
+import { LinkPreset } from './types/config'
 
 export const siteConfig: SiteConfig = {
 	title: "Fuwari",
@@ -81,3 +82,26 @@ export const licenseConfig: LicenseConfig = {
 	name: "CC BY-NC-SA 4.0",
 	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
 };
+
+export const commentConfig: CommentConfig = {
+  // disqus: {
+  //   shortname: 'fuwari',
+  // },
+  giscus: {
+    repo: 'moeyua/fuwari',
+    repoId: 'R_kgDOKy9HOQ',
+    category: 'General',
+    categoryId: 'DIC_kwDOKy9HOc4CegmW',
+    mapping: 'title',
+    strict: '0',
+    reactionsEnabled: '1',
+    emitMetadata: '1',
+    inputPosition: 'top',
+    theme: 'reactive',
+    lang: 'zh-CN',
+    loading: 'lazy',
+  },
+  // twikoo: {
+  //   envId: 'https://twikoo-tau-flame.vercel.app',
+  // },
+}
