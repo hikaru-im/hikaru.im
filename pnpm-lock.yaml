@@ -29,6 +29,9 @@ importers:
       '@fontsource/roboto':
         specifier: ^5.2.5
         version: 5.2.5
+      '@giscus/svelte':
+        specifier: ^3.1.0
+        version: 3.1.0(svelte@5.27.3)
       '@iconify-json/fa6-brands':
         specifier: ^1.2.5
         version: 1.2.5
@@ -59,9 +62,6 @@ importers:
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
-      giscus:
-        specifier: ^1.6.0
-        version: 1.6.0
       hastscript:
         specifier: ^9.0.1
         version: 9.0.1
@@ -1037,6 +1037,11 @@ packages:
 
   '@fontsource/roboto@5.2.5':
     resolution: {integrity: sha512-70r2UZ0raqLn5W+sPeKhqlf8wGvUXFWlofaDlcbt/S3d06+17gXKr3VNqDODB0I1ASme3dGT5OJj9NABt7OTZQ==}
+
+  '@giscus/svelte@3.1.0':
+    resolution: {integrity: sha512-87AhkRvT5mUzGFbbv5RX1+DiC8RsRVZPzyGDNyshNUlezlTjnLB7cXf7ySqEKu6KlRTP41c1XGUufoKhoaQjqg==}
+    peerDependencies:
+      svelte: ^3 || ^4 || ^5
 
   '@iconify-json/fa6-brands@1.2.5':
     resolution: {integrity: sha512-U/iFfziz6jSN9zArOJZYTtoj2tQyh6MxPdI8M84DQ2kEulPaj8j+h9bqvjmzszNHmD7v+kmmKd/MLkMKk+3Zuw==}
@@ -6247,6 +6252,11 @@ snapshots:
   '@fontsource-variable/jetbrains-mono@5.2.5': {}
 
   '@fontsource/roboto@5.2.5': {}
+
+  '@giscus/svelte@3.1.0(svelte@5.27.3)':
+    dependencies:
+      giscus: 1.6.0
+      svelte: 5.27.3
 
   '@iconify-json/fa6-brands@1.2.5':
     dependencies:
