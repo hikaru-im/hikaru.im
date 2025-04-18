@@ -1,40 +1,28 @@
-# 🍥Fuwari
+# Aakri
 
-A static blog template built with [Astro](https://astro.build).
+基于 [Astro](https://astro.build) 开发的静态博客模板。
 
-[**🖥️ Live Demo (Vercel)**](https://fuwari.vercel.app)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**📦 Old Hexo Version**](https://github.com/saicaca/hexo-theme-vivia)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**🌏 中文**](https://github.com/saicaca/fuwari/blob/main/README.zh-CN.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**🌏 日本語**](https://github.com/saicaca/fuwari/blob/main/README.ja-JP.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**🌏 한국어**](https://github.com/saicaca/fuwari/blob/main/README.ko.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**🌏 Español**](https://github.com/saicaca/fuwari/blob/main/README.es.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**🌏 ไทย**](https://github.com/saicaca/fuwari/blob/main/README.th.md)
+## ✨ 功能特性
 
-> README version: `2024-09-10`
+- [x] 基于 Astro 和 Tailwind CSS 开发
+- [x] 流畅的动画和页面过渡
+- [x] 亮色 / 暗色模式
+- [x] 自定义主题色和横幅图片
+- [x] 响应式设计
+- [ ] 评论
+- [x] 搜索
+- [ ] 文内目录
 
-![Preview Image](https://raw.githubusercontent.com/saicaca/resource/main/fuwari/home.png)
+## 🚀 使用方法
 
-## ✨ Features
+1. 使用此模板[生成新仓库](https://github.com/hikaru-im/akri/generate)或 Fork 此仓库
+2. 进行本地开发，Clone 新的仓库，执行 `pnpm install` 和 `pnpm add sharp` 以安装依赖
+3. 通过配置文件 `src/config.ts` 自定义博客
+4. 执行 `pnpm new-post <filename>` 创建新文章，并在 `src/content/posts/` 目录中编辑
+5. 参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Vercel, Netlify, GitHub Pages 等；部署前需编辑
+   `astro.config.mjs` 中的站点设置
 
-- [x] Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
-- [x] Smooth animations and page transitions
-- [x] Light / dark mode
-- [x] Customizable theme colors & banner
-- [x] Responsive design
-- [ ] Comments
-- [x] Search
-- [ ] TOC
-
-## 🚀 How to Use
-
-1. [Generate a new repository](https://github.com/saicaca/fuwari/generate) from this template or fork this repository.
-2. To edit your blog locally, clone your repository, run `pnpm install` AND `pnpm add sharp` to install dependencies.
-   - Install [pnpm](https://pnpm.io) `npm install -g pnpm` if you haven't.
-3. Edit the config file `src/config.ts` to customize your blog.
-4. Run `pnpm new-post <filename>` to create a new post and edit it in `src/content/posts/`.
-5. Deploy your blog to Vercel, Netlify, GitHub Pages, etc. following [the guides](https://docs.astro.build/en/guides/deploy/). You need to edit the site configuration in `astro.config.mjs` before deployment.
-
-## ⚙️ Frontmatter of Posts
+## ⚙️ 文章 Front matter
 
 ```yaml
 ---
@@ -42,23 +30,21 @@ title: My First Blog Post
 published: 2023-09-09
 description: This is the first post of my new Astro blog.
 image: ./cover.jpg
-tags: [Foo, Bar]
+tags: [ Foo, Bar ]
 category: Front-end
 draft: false
-lang: jp      # Set only if the post's language differs from the site's language in `config.ts`
+# lang: jp
 ---
 ```
 
-## 🧞 Commands
+## 🧞 指令
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                             | Action                                           |
-|:------------------------------------|:-------------------------------------------------|
-| `pnpm install` AND `pnpm add sharp` | Installs dependencies                            |
-| `pnpm dev`                          | Starts local dev server at `localhost:4321`      |
-| `pnpm build`                        | Build your production site to `./dist/`          |
-| `pnpm preview`                      | Preview your build locally, before deploying     |
-| `pnpm new-post <filename>`          | Create a new post                                |
-| `pnpm astro ...`                    | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro --help`                 | Get help using the Astro CLI                     |
+| Command                           | Action                            |
+|:----------------------------------|:----------------------------------|
+| `pnpm install` 并 `pnpm add sharp` | 安装依赖                              |
+| `pnpm dev`                        | 在 `localhost:4321` 启动本地开发服务器      |
+| `pnpm build`                      | 构建网站至 `./dist/`                   |
+| `pnpm preview`                    | 本地预览已构建的网站                        |
+| `pnpm new-post <filename>`        | 创建新文章                             |
+| `pnpm astro ...`                  | 执行 `astro add`, `astro check` 等指令 |
+| `pnpm astro --help`               | 显示 Astro CLI 帮助                   |

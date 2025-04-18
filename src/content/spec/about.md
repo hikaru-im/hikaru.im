@@ -1,7 +1,7 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+This is the demo site for [Akari](https://github.com/hikaru-im/akari).
 
-::github{repo="saicaca/fuwari"}
+::github{repo="hikaru-im/akari"}
 
 > ### Sources of images used in this site
 > - [Unsplash](https://unsplash.com/)
