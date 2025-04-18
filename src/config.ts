@@ -1,10 +1,11 @@
 import type {
-	LicenseConfig,
-	NavBarConfig,
-	ProfileConfig,
-	SiteConfig,
-} from "./types/config";
-import { LinkPreset } from "./types/config";
+  CommentConfig,
+  LicenseConfig,
+  NavBarConfig,
+  ProfileConfig,
+  SiteConfig,
+} from './types/config'
+import { LinkPreset } from './types/config'
 
 export const siteConfig: SiteConfig = {
 	title: "Hikaru",
@@ -60,3 +61,26 @@ export const licenseConfig: LicenseConfig = {
 	name: "CC BY-NC-SA 4.0",
 	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
 };
+
+export const commentConfig: CommentConfig = {
+  // disqus: {
+  //   shortname: 'fuwari',
+  // },
+  giscus: {
+    repo: 'hikaru-im/hikaru.im',
+    repoId: 'R_kgDOOZHKCA',
+    category: 'Comments',
+    categoryId: 'DIC_kwDOOZHKCM4CpGo-',
+    mapping: 'title',
+    strict: '1',
+    reactionsEnabled: '1',
+    emitMetadata: '0',
+    inputPosition: 'bottom',
+    theme: 'reactive',
+    lang: 'zh-CN',
+    loading: 'lazy',
+  },
+  // twikoo: {
+  //   envId: 'https://twikoo-tau-flame.vercel.app',
+  // },
+}
