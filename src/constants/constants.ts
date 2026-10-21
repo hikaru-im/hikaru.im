@@ -1,3 +1,4 @@
+// Keep the legacy archive route compatible with existing links.
 export const UNCATEGORIZED = "__uncategorized__";
 
 export const PAGE_SIZE = 8;
