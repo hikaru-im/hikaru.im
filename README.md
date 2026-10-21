@@ -1,4 +1,4 @@
-# Aakri
+# Akari
 
 基于 [Astro](https://astro.build) 开发的静态博客模板。
 
@@ -9,13 +9,13 @@
 - [x] 亮色 / 暗色模式
 - [x] 自定义主题色和横幅图片
 - [x] 响应式设计
-- [ ] 评论
+- [x] 评论
 - [x] 搜索
-- [ ] 文内目录
+- [x] 文内目录
 
 ## 🚀 使用方法
 
-1. 使用此模板[生成新仓库](https://github.com/hikaru-im/akri/generate)或 Fork 此仓库
+1. 使用此模板[生成新仓库](https://github.com/hikaru-im/akari/generate)或 Fork 此仓库
 2. 进行本地开发，Clone 新的仓库，执行 `pnpm install` 和 `pnpm add sharp` 以安装依赖
 3. 通过配置文件 `src/config.ts` 自定义博客
 4. 执行 `pnpm new-post <filename>` 创建新文章，并在 `src/content/posts/` 目录中编辑

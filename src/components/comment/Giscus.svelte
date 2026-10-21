@@ -1,9 +1,8 @@
 <script lang="ts">
-import { onDestroy, onMount } from "svelte";
 import Giscus from "@giscus/svelte";
-
-import { commentConfig } from "@/config";
 import { getHue } from "@utils/setting-utils.ts";
+import { onDestroy, onMount } from "svelte";
+import { commentConfig } from "@/config";
 
 if (!commentConfig || !commentConfig.giscus) {
 	throw new Error("Giscus comments are not configured");
@@ -117,6 +116,7 @@ function updateGiscusTheme(retries = 0, maxRetries = 10) {
 	giscus_iframe.contentWindow.postMessage(message, "https://giscus.app");
 }
 </script>
+
 
 <Giscus
     id="comments"
