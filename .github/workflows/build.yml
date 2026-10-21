@@ -2,9 +2,9 @@ name: Build and Check
 
 on:
   push:
-    branches: [ main ] # Adjust branches as needed
+    branches: [ main, staging/akari-fuwari-sync ]
   pull_request:
-    branches: [ main ] # Adjust branches as needed
+    branches: [ main, staging/akari-fuwari-sync ]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

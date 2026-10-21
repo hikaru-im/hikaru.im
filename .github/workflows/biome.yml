@@ -2,9 +2,9 @@ name: Code quality
 
 on:
   push:
-    branches: [ main ] # Adjust branches as needed
+    branches: [ main, staging/akari-fuwari-sync ]
   pull_request:
-    branches: [ main ] # Adjust branches as needed
+    branches: [ main, staging/akari-fuwari-sync ]
 
 jobs:
   quality:
