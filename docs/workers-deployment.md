@@ -1,31 +1,31 @@
-# Cloudflare Workers（静态博客）
+# Cloudflare Workers 静态部署
 
-本分支基于 `staging/akari-fuwari-sync`，不修改当前 Cloudflare Pages 项目、域名或生产构建。
+## 当前部署拓扑
 
-## 原理
+- 现有正式 Worker：`hikaru-im`，绑定 `hikaru.im`；Worker 的 GitHub 构建监听 `main`。
+- 本配置 `wrangler.jsonc` 的名称必须与现有 Worker **完全一致**，避免创建第二个 Worker。
+- Astro 采用静态站点生成，不使用 Cloudflare SSR 适配器，Wrangler 上传 `dist` 静态资源。
+- Workers Builds 的生产与预览根目录均为 `/`，构建命令 `pnpm run build`；生产部署为 `npx wrangler deploy`，预览为 `npx wrangler preview`。
 
-Astro 在构建时生成静态页面和 Pagefind 索引，Workers Static Assets 直接托管 `dist`。**不添加 Astro SSR 适配器，也不创建 Worker JavaScript 入口。**
+## 流程
 
-`wrangler.jsonc` 中 `name` 为独立测试 Worker `hikaru-blog-preview`。`assets.html_handling` 使用 `auto-trailing-slash` 以兼容 `trailingSlash: "always"` 的站点 URL；`not_found_handling` 使用 `404-page`，避免未知 URL 错误地返回首页。
+1. PR #38 完成新版主题校验，PR #39（本 PR）以 #38 分支为目标，仅准备配置。
+2. 先合并 PR #39 至 `staging/akari-fuwari-sync`，在主 PR 中统一构建验证；该操作不会改变 `main` 或生产 Worker。
+3. 通过源码与预览构建检查后，将 PR #38 合入 `main` 才会触发正式 Worker 自动部署；这一步影响线上网站，需在合并前完成回归确认。
+4. 生产部署之后核对首页、全部 7 篇文章、旧分类/标签 URL、关于页面、Giscus、Pagefind、RSS、Sitemap、404 页面和移动端。
 
-## 本地或 CI 发布
+## 命令
 
 ```bash
 corepack enable
 pnpm install --frozen-lockfile
-pnpm build
-pnpm dlx wrangler deploy
+pnpm run build
+npx wrangler deploy
 ```
 
-Workers Builds Git 集成的配置：GitHub 仓库 `hikaru-im/hikaru.im`，分支 `deploy/workers-static-assets`，构建命令 `pnpm build`，部署命令 `pnpm dlx wrangler deploy`，根目录 `/`。建议在 Cloudflare 控制台绑定 GitHub 后启用自动构建，且先保持 `workers.dev` 测试域名，**不要绑定 `hikaru.im`**。
+### 注意
 
-## 回归清单
-
-- 首页、关于页面以及全部 7 篇文章的原有 URL
-- 分类和标签旧地址（`/archive/category/`、`/archive/tag/`）
-- 页面 CSS/图片加载、移动端、暗色主题、Swup 页面切换
-- Giscus 评论（绑定 `hikaru-im/hikaru.im`，不应指向模板）
-- `/rss.xml`、`/sitemap-index.xml`、`/pagefind/pagefind.js` 和搜索
-- 未知页面应返回 404（如配置自定义 404 页面则展示该页面）
-
-正式切换前：在 Worker 的测试域名完成浏览器回归、再规划 `hikaru.im` 域名映射；旧 Pages 项目暂时保留用于快速回滚。
+- 不需要新的 Pages 项目，也不应重建 Worker。
+- `wrangler.jsonc` 配置 `404-page`，未知 URL 应返回 404，而非首页。
+- PR #39 的 CI 通过不等于 Workers 预览地址可访问；需单独确认 Workers Builds 预览部署结果。
+- 任何无法完成的交互测试不得标记为通过。
